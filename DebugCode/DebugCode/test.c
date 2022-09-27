@@ -64,8 +64,121 @@
 //	return 0;
 //}
 
+
 int main()
 {
-	//bool a;
+	char arr[][5] = { {1,2,3,4,5} ,{6,7,8,9,10}, {11,12,13,14} };
+	char (*p1)[5] = arr;
+	char* p2 = arr[0];
+	char(*p3)[5] = &arr[0];
+	printf("%p\n",p1);
+	printf("%p\n", p2);
+	printf("%p\n", p3);
+	int i, j = 0;
+	for (i = 0; i < 3; i++)
+	{
+		for (j = 0; j < 5; j++)
+		{
+			//printf("%d ",p1[i][j]);
+			printf("%d ",*(* (p1 + i) + j) );
+		}
+		printf("\n");
+	}
+	printf("************************\n");
+	for (i = 0; i < 3; i++)
+	{
+		for (j = 0; j < 5; j++)
+		{
+			printf("%d ",*(p2+j+(5*i)));
+		}
+		printf("\n");
+	}
+	printf("************************\n");
+	for (i = 0; i < 3; i++)
+	{
+		for (j = 0; j < 5; j++)
+		{
+			//printf("%d ", *((*p3) + j + (5 * i)));
+			printf("%d ", *(*(p3 + i) + j));
+		}
+		printf("\n");
+	}
 	return 0;
 }
+
+//void(*singal(char*, void(*)(char*)))(char*);
+//void print(char*);  //回调函数
+//
+//int main()
+//{
+//	void (*p1)(char*) = print;
+//	void (*p2)(char*) = NULL;
+//	char arr[] = "hello there";
+//	p2 = singal(arr,p1);
+//	return 0;
+//}
+//void print(char* s)
+//{
+//	printf(s);
+//}
+//void(*singal(char* s, void(*p)(char*)))(char*)
+//{
+//	print(s);
+//	return print;
+//}
+
+//struct
+
+//struct point
+//{
+//	int x;
+//	int y;
+//};
+//struct rect
+//{
+//	struct point pt1;
+//	struct point pt2;
+//	//struct rect a;  //非法
+//};
+//struct point makepoint(int x, int y)
+//{
+//	struct point temp;
+//	temp.x = x;
+//	temp.y = y;
+//	return temp;
+//}
+//typedef struct rect* ptr;
+//struct word
+//{
+//	int a : 1;
+//	int : 31;  //无名字段
+//	int : 0;
+//	int : 1;
+//
+//};
+//int main()
+//{
+//	struct rect screen;
+//	screen.pt1 = makepoint(0,0);
+//	screen.pt2 = makepoint(10, 10);
+//	return 0;
+//}
+
+//int main()
+//{
+//	struct point a;
+//	struct point * p = &a;
+//	(*p).x = 0;
+//	(*p).y = 0;
+//	return 0;
+//}
+
+//int main()
+//{
+//	struct word a;
+//	struct word* p = &a;  //字段不能&？
+//	printf("%p\n",p);
+//	printf("%d\n", sizeof(a));
+//	return 0;
+//}
+

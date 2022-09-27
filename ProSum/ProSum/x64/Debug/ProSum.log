@@ -1,0 +1,14 @@
+﻿  test.c
+D:\Code\VS2022\ProSum\ProSum\test.c(58,1): warning C4010: 单行注释包含行继续符
+D:\Code\VS2022\ProSum\ProSum\test.c(59,1): warning C4010: 单行注释包含行继续符
+D:\Code\VS2022\ProSum\ProSum\test.c(60,1): warning C4010: 单行注释包含行继续符
+D:\Code\VS2022\ProSum\ProSum\test.c(61,1): warning C4010: 单行注释包含行继续符
+D:\Code\VS2022\ProSum\ProSum\test.c(62,1): warning C4010: 单行注释包含行继续符
+D:\Code\VS2022\ProSum\ProSum\test.c(227,1): warning C4010: 单行注释包含行继续符
+D:\Code\VS2022\ProSum\ProSum\test.c(228,1): warning C4010: 单行注释包含行继续符
+D:\Code\VS2022\ProSum\ProSum\test.c(229,1): warning C4010: 单行注释包含行继续符
+D:\Code\VS2022\ProSum\ProSum\test.c(315,1): warning C4010: 单行注释包含行继续符
+D:\Code\VS2022\ProSum\ProSum\test.c(316,1): warning C4010: 单行注释包含行继续符
+D:\Code\VS2022\ProSum\ProSum\test.c(317,1): warning C4010: 单行注释包含行继续符
+D:\Code\VS2022\ProSum\ProSum\test.c(523,1): warning C4048: “char (*)[0][5]”和“char (*)[3][5]”数组的下标不同
+  ProSum.vcxproj -> D:\Code\VS2022\ProSum\x64\Debug\ProSum.exe

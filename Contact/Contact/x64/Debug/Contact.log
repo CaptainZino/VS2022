@@ -1,0 +1,3 @@
+﻿  main.c
+D:\Code\VS2022\Contact\Contact\contact.h(1,1): warning C4828: 文件包含在偏移 0x39f 处开始的字符，该字符在当前源字符集中无效(代码页 936)。
+  Contact.vcxproj -> D:\Code\VS2022\Contact\x64\Debug\Contact.exe
