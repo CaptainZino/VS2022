@@ -382,7 +382,7 @@ using namespace std;
 //};
 ////通过虚继承解决菱形继承问题
 ////此时Animal称为虚基类
-////Sheep和Ostrich从Animal中继承的实际是一个指向Animal中age变量的一个虚基类指针(vbptr)
+////Sheep和Ostrich从Animal中继承的实际是一个虚基类表指针(vbptr)，该指针指向一个虚基类表，虚基类表中存放的是到父类的偏移量
 //class Sheep :virtual public Animal  //虚继承
 //{
 //
@@ -410,3 +410,4 @@ using namespace std;
 //	test1();
 //	return 0;
 //}
+
