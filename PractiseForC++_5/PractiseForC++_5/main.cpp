@@ -49,7 +49,8 @@ using namespace std;
 //{
 //	ifstream ifs;
 //	ifs.open("./test.txt",ios::in);
-//	if (!ifs.is_open()) {
+//	if (!ifs.is_open()) 
+// {
 //	
 //		perror("open file");
 //		return;
