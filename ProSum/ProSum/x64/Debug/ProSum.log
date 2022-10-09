@@ -10,5 +10,8 @@ D:\Code\VS2022\ProSum\ProSum\test.c(229,1): warning C4010: 单行注释包含行
 D:\Code\VS2022\ProSum\ProSum\test.c(315,1): warning C4010: 单行注释包含行继续符
 D:\Code\VS2022\ProSum\ProSum\test.c(316,1): warning C4010: 单行注释包含行继续符
 D:\Code\VS2022\ProSum\ProSum\test.c(317,1): warning C4010: 单行注释包含行继续符
-D:\Code\VS2022\ProSum\ProSum\test.c(523,1): warning C4048: “char (*)[0][5]”和“char (*)[3][5]”数组的下标不同
+D:\Code\VS2022\ProSum\ProSum\test.c(533,9): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“size_t”
+D:\Code\VS2022\ProSum\ProSum\test.c(533,9): message : 请考虑在格式字符串中使用“%zd”
+D:\Code\VS2022\ProSum\ProSum\test.c(538,14): warning C4047: “函数”:“int *”与“int”的间接级别不同
+D:\Code\VS2022\ProSum\ProSum\test.c(538,10): warning C4024: “test”: 形参和实参 1 的类型不同
   ProSum.vcxproj -> D:\Code\VS2022\ProSum\x64\Debug\ProSum.exe
