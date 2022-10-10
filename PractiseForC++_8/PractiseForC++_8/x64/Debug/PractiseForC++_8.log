@@ -1,3 +1,5 @@
 ﻿  main.cpp
 D:\Code\VS2022\PractiseForC++_8\PractiseForC++_8\main.cpp(27,1): warning C4010: 单行注释包含行继续符
+D:\Code\VS2022\PractiseForC++_8\PractiseForC++_8\main.cpp(590,1): warning C4010: 单行注释包含行继续符
+D:\Code\VS2022\PractiseForC++_8\PractiseForC++_8\main.cpp(592,1): warning C4010: 单行注释包含行继续符
   PractiseForC++_8.vcxproj -> D:\Code\VS2022\PractiseForC++_8\x64\Debug\PractiseForC++_8.exe
