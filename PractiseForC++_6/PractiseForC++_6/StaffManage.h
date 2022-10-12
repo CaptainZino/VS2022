@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <vector>
 using namespace std;
 
 //#define NUMLEN 10
@@ -58,3 +59,5 @@ public:
 extern void Menu();
 extern void AddStaff();
 extern void PrintStaff();
+extern void FindStaff();
+extern void DeleteStaff();

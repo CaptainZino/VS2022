@@ -16,16 +16,16 @@ int main()
 				AddStaff();
 				break;
 			case Print:
-
+				PrintStaff();
 				break;
 			case Delete:
-
+				DeleteStaff();
 				break;
 			case Modify:
 
 				break;
 			case Find:
-				PrintStaff();
+				FindStaff();
 				break;
 			case Sort:
 

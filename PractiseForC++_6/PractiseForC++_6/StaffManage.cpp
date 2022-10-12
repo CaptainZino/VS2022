@@ -1,23 +1,26 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 #include "StaffManage.h"
 
+//默认构造
 Staff::Staff()
 {
 	//
 }
+//有参构造
 Staff::Staff(string StaffNum, string DepartmentNum, string StaffName)
 {
 	this->StaffNum = StaffNum;
 	this->DepartmentNum = DepartmentNum;
 	this->StaffName = StaffName;
 }
+//拷贝构造
 Staff::Staff(Staff& staff)
 {
 	this->StaffNum = staff.StaffNum;
 	this->DepartmentNum = staff.DepartmentNum;
 	this->StaffName = staff.StaffName;
 }
-
+//
 void Staff::PrintStaff()
 {
 	cout << "员工姓名:" << this->StaffName << endl;
@@ -86,6 +89,7 @@ void SaveInfo(Boss& staff)
 	ofs.close();
 }
 
+//添加员工信息
 void AddStaff()
 {
 	int input = 0;
@@ -145,47 +149,231 @@ void AddStaff()
 	} while (input);
 }
 
+//打印所有员工信息
 void PrintStaff()
 {
-	string name;
-	cout << "请输入要显示的职工姓名:" << endl;
-	cin >> name;
+	ifstream ifs;
+	string buf;
+
+	cout << "普通员工:" << endl;
+	ifs.open("NormalStaff.txt", ios::in);
+	if (!ifs.is_open())
+	{
+		perror("open file");
+		return;
+	}
+	while (getline(ifs, buf))
+	{
+		cout << buf << endl;
+	}
+	ifs.close();
+
+	cout << "经理:" << endl;
+	ifs.open("ManagerStaff.txt", ios::in);
+	if (!ifs.is_open())
+	{
+		perror("open file");
+		return;
+	}
+	while (getline(ifs, buf))
+	{
+		cout << buf << endl;
+	}
+	ifs.close();
+
+	cout << "老板:" << endl;
+	ifs.open("Boss.txt", ios::in);
+	if (!ifs.is_open())
+	{
+		perror("open file");
+		return;
+	}
+	while (getline(ifs, buf))
+	{
+		cout << buf << endl;
+	}
+	ifs.close();
+}
+
+//按编号删除员工信息
+void DeleteStaff() 
+{
+	//先将文件内容读入容器，删掉指定行后再写回
+	vector<string> vStaff;
+	ifstream ifs;
+	string buf;
+	string DelNum;
+	cout << "请输入要删除的员工编号:" << endl;
+	cin >> DelNum;
+
+	//普通员工文件
+	ifs.open("NormalStaff.txt",ios::in);
+	if (!ifs.is_open())
+	{
+		perror("open file");
+		return;
+	}
+	while (getline(ifs, buf))
+	{
+		vStaff.push_back(buf);
+	}
+	ifs.close();
+
+	for (int i = 0; i < vStaff.size(); i++)
+	{
+		string tempNum = vStaff[i];
+		int pos1 = tempNum.find(' ');  //查找空格第一次出现的位置
+		int pos2 = tempNum.rfind(' ');  //查找空格第二次出现的位置
+		tempNum = tempNum.substr(pos1+1,pos2-pos1-1);  //截取员工编号
+		if (DelNum.compare(tempNum) == 0)
+		{
+			vector<string>::iterator it = vStaff.begin()+i;  //让迭代器指向删除行
+			vStaff.erase(it);
+		}
+		
+	}
+
+	ofstream ofs;
+	ofs.open("NormalStaff.txt",ios::out);
+	for (int i = 0; i < vStaff.size(); i++)
+	{
+		ofs << vStaff[i] << endl;  //将数据写回文本
+	}
+	ofs.close();
+
+	//经理员工文件
+	ifs.open("ManagerStaff.txt", ios::in);
+	if (!ifs.is_open())
+	{
+		perror("open file");
+		return;
+	}
+	while (getline(ifs, buf))
+	{
+		vStaff.push_back(buf);
+	}
+	ifs.close();
+
+	for (int i = 0; i < vStaff.size(); i++)
+	{
+		string tempNum = vStaff[i];
+		int pos1 = tempNum.find(' ');  //查找空格第一次出现的位置
+		int pos2 = tempNum.rfind(' ');  //查找空格第二次出现的位置
+		tempNum = tempNum.substr(pos1 + 1, pos2 - pos1 - 1);  //截取员工编号
+		if (DelNum.compare(tempNum) == 0)
+		{
+			vector<string>::iterator it = vStaff.begin() + i;  //让迭代器指向删除行
+			vStaff.erase(it);
+		}
+
+	}
+
+	ofs.open("ManagerStaff.txt", ios::out);
+	for (int i = 0; i < vStaff.size(); i++)
+	{
+		ofs << vStaff[i] << endl;  //将数据写回文本
+	}
+	ofs.close();
+
+	//老板文件
+	ifs.open("Boss.txt", ios::in);
+	if (!ifs.is_open())
+	{
+		perror("open file");
+		return;
+	}
+	while (getline(ifs, buf))
+	{
+		vStaff.push_back(buf);
+	}
+	ifs.close();
+
+	for (int i = 0; i < vStaff.size(); i++)
+	{
+		string tempNum = vStaff[i];
+		int pos1 = tempNum.find(' ');  //查找空格第一次出现的位置
+		int pos2 = tempNum.rfind(' ');  //查找空格第二次出现的位置
+		tempNum = tempNum.substr(pos1 + 1, pos2 - pos1 - 1);  //截取员工编号
+		if (DelNum.compare(tempNum) == 0)
+		{
+			vector<string>::iterator it = vStaff.begin() + i;  //让迭代器指向删除行
+			vStaff.erase(it);
+		}
+
+	}
+
+	ofs.open("Boss.txt", ios::out);
+	for (int i = 0; i < vStaff.size(); i++)
+	{
+		ofs << vStaff[i] << endl;  //将数据写回文本
+	}
+	ofs.close();
+
+}
+
+//按姓名或编号查找员工信息
+void FindStaff()
+{
+	string FindIndex;
+	cout << "请输入要查找的职工姓名或编号:" << endl;
+	cin >> FindIndex;
 	string buf;
 	ifstream ifs;
-	ifs.open("NormalStaff.txt",ios::in);
-	while (getline(ifs,buf)) 
+	ifs.open("NormalStaff.txt", ios::in);
+	if (!ifs.is_open())
 	{
-		int pos = buf.find(' ');
-		string namebuf = buf.substr(0, pos);
-		if (name.compare(namebuf) == 0)
+		perror("open file");
+		return;
+	}
+	while (getline(ifs, buf))
+	{
+		int pos1 = buf.find(' ');
+		int pos2 = buf.rfind(' ');
+		string namebuf = buf.substr(0, pos1);  //截取员工姓名
+		string numbuf = buf.substr(pos1 + 1, pos2 - pos1 - 1);  //截取员工编号
+		if (FindIndex.compare(namebuf) == 0 || FindIndex.compare(numbuf) == 0)
 		{
-			cout << "姓名为" << name << "的职工的信息:" << buf << endl;
+			cout << "姓名为" << FindIndex << "的职工的信息:" << buf << endl;
 		}
 
 	}
 	ifs.close();
 
 	ifs.open("ManagerStaff.txt", ios::in);
+	if (!ifs.is_open())
+	{
+		perror("open file");
+		return;
+	}
 	while (getline(ifs, buf))
 	{
-		int pos = buf.find(' ');
-		string namebuf = buf.substr(0, pos);
-		if (name.compare(namebuf) == 0)
+		int pos1 = buf.find(' ');
+		int pos2 = buf.rfind(' ');
+		string namebuf = buf.substr(0, pos1);  //截取员工姓名
+		string numbuf = buf.substr(pos1 + 1, pos2 - pos1 - 1);  //截取员工编号
+		if (FindIndex.compare(namebuf) == 0 || FindIndex.compare(numbuf) == 0)
 		{
-			cout << "姓名为" << name << "的职工的信息:" << buf << endl;
+			cout << "姓名为" << FindIndex << "的职工的信息:" << buf << endl;
 		}
 
 	}
 	ifs.close();
 
 	ifs.open("Boss.txt", ios::in);
+	if (!ifs.is_open())
+	{
+		perror("open file");
+		return;
+	}
 	while (getline(ifs, buf))
 	{
-		int pos = buf.find(' ');
-		string namebuf = buf.substr(0, pos);
-		if (name.compare(namebuf) == 0)
+		int pos1 = buf.find(' ');
+		int pos2 = buf.rfind(' ');
+		string namebuf = buf.substr(0, pos1);  //截取员工姓名
+		string numbuf = buf.substr(pos1 + 1, pos2 - pos1 - 1);  //截取员工编号
+		if (FindIndex.compare(namebuf) == 0 || FindIndex.compare(numbuf) == 0)
 		{
-			cout << "姓名为" << name << "的职工的信息:" << buf << endl;
+			cout << "姓名为" << FindIndex << "的职工的信息:" << buf << endl;
 		}
 
 	}

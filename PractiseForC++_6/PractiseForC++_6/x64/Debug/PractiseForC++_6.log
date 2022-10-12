@@ -1,5 +1,14 @@
 ﻿  StaffManage.cpp
-D:\Code\VS2022\PractiseForC++_6\PractiseForC++_6\StaffManage.cpp(158,26): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-D:\Code\VS2022\PractiseForC++_6\PractiseForC++_6\StaffManage.cpp(171,26): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-D:\Code\VS2022\PractiseForC++_6\PractiseForC++_6\StaffManage.cpp(184,26): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\Code\VS2022\PractiseForC++_6\PractiseForC++_6\StaffManage.cpp(225,31): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\Code\VS2022\PractiseForC++_6\PractiseForC++_6\StaffManage.cpp(226,32): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\Code\VS2022\PractiseForC++_6\PractiseForC++_6\StaffManage.cpp(260,31): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\Code\VS2022\PractiseForC++_6\PractiseForC++_6\StaffManage.cpp(261,32): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\Code\VS2022\PractiseForC++_6\PractiseForC++_6\StaffManage.cpp(294,31): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\Code\VS2022\PractiseForC++_6\PractiseForC++_6\StaffManage.cpp(295,32): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\Code\VS2022\PractiseForC++_6\PractiseForC++_6\StaffManage.cpp(330,27): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\Code\VS2022\PractiseForC++_6\PractiseForC++_6\StaffManage.cpp(331,28): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\Code\VS2022\PractiseForC++_6\PractiseForC++_6\StaffManage.cpp(350,27): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\Code\VS2022\PractiseForC++_6\PractiseForC++_6\StaffManage.cpp(351,28): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\Code\VS2022\PractiseForC++_6\PractiseForC++_6\StaffManage.cpp(370,27): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\Code\VS2022\PractiseForC++_6\PractiseForC++_6\StaffManage.cpp(371,28): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
   PractiseForC++_6.vcxproj -> D:\Code\VS2022\PractiseForC++_6\x64\Debug\PractiseForC++_6.exe
