@@ -22,16 +22,16 @@ int main()
 				DeleteStaff();
 				break;
 			case Modify:
-
+				ModifyStaff();
 				break;
 			case Find:
 				FindStaff();
 				break;
 			case Sort:
-
+				SortStaff();
 				break;
 			case Clear:
-
+				ClearStaff();
 				break;
 			case Exit:
 				cout << "Exit Staff Management!" << endl;

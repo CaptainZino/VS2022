@@ -5,6 +5,7 @@
 #include <string>
 #include <fstream>
 #include <vector>
+#include <algorithm>
 using namespace std;
 
 //#define NUMLEN 10
@@ -61,3 +62,6 @@ extern void AddStaff();
 extern void PrintStaff();
 extern void FindStaff();
 extern void DeleteStaff();
+extern void ModifyStaff();
+extern void ClearStaff();
+extern void SortStaff();

@@ -311,6 +311,137 @@ void DeleteStaff()
 
 }
 
+//修改员工信息:
+void ModifyStaff()
+{
+	//先将文件内容读入容器，修改指定行后再写回
+	vector<string> vStaff;
+	ifstream ifs;
+	string buf;
+	string ModifyNum;
+	string name;
+	string PersonalNumber;
+	string DepartNumber;
+	string ModifyInfo;
+	string space = " ";
+	cout << "请输入要修改的员工编号:" << endl;
+	cin >> ModifyNum;
+
+	cout << "请输入修改后的姓名:" << endl;
+	cin >> name;
+	cout << "请输入修改后的员工编号:" << endl;
+	cin >> PersonalNumber;
+	cout << "请输入修改后的部门编号" << endl;
+	cin >> DepartNumber;
+
+	//拼接修改后的员工信息
+	ModifyInfo += name;
+	ModifyInfo += space;
+	ModifyInfo += PersonalNumber;
+	ModifyInfo += space;
+	ModifyInfo += DepartNumber;
+
+	//普通员工文件
+	ifs.open("NormalStaff.txt", ios::in);
+	if (!ifs.is_open())
+	{
+		perror("open file");
+		return;
+	}
+	while (getline(ifs, buf))
+	{
+		vStaff.push_back(buf);
+	}
+	ifs.close();
+
+	for (int i = 0; i < vStaff.size(); i++)
+	{
+		string tempNum = vStaff[i];
+		int pos1 = tempNum.find(' ');  //查找空格第一次出现的位置
+		int pos2 = tempNum.rfind(' ');  //查找空格第二次出现的位置
+		tempNum = tempNum.substr(pos1 + 1, pos2 - pos1 - 1);  //截取员工编号
+		if (ModifyNum.compare(tempNum) == 0)
+		{
+			vStaff[i] = ModifyInfo;
+		}
+
+	}
+
+	ofstream ofs;
+	ofs.open("NormalStaff.txt", ios::out);
+	for (int i = 0; i < vStaff.size(); i++)
+	{
+		ofs << vStaff[i] << endl;  //将数据写回文本
+	}
+	ofs.close();
+
+	//经理员工文件
+	ifs.open("ManagerStaff.txt", ios::in);
+	if (!ifs.is_open())
+	{
+		perror("open file");
+		return;
+	}
+	while (getline(ifs, buf))
+	{
+		vStaff.push_back(buf);
+	}
+	ifs.close();
+
+	for (int i = 0; i < vStaff.size(); i++)
+	{
+		string tempNum = vStaff[i];
+		int pos1 = tempNum.find(' ');  //查找空格第一次出现的位置
+		int pos2 = tempNum.rfind(' ');  //查找空格第二次出现的位置
+		tempNum = tempNum.substr(pos1 + 1, pos2 - pos1 - 1);  //截取员工编号
+		if (ModifyNum.compare(tempNum) == 0)
+		{
+			vStaff[i] = ModifyInfo;
+		}
+
+	}
+
+	ofs.open("ManagerStaff.txt", ios::out);
+	for (int i = 0; i < vStaff.size(); i++)
+	{
+		ofs << vStaff[i] << endl;  //将数据写回文本
+	}
+	ofs.close();
+
+	//老板文件
+	ifs.open("Boss.txt", ios::in);
+	if (!ifs.is_open())
+	{
+		perror("open file");
+		return;
+	}
+	while (getline(ifs, buf))
+	{
+		vStaff.push_back(buf);
+	}
+	ifs.close();
+
+	for (int i = 0; i < vStaff.size(); i++)
+	{
+		string tempNum = vStaff[i];
+		int pos1 = tempNum.find(' ');  //查找空格第一次出现的位置
+		int pos2 = tempNum.rfind(' ');  //查找空格第二次出现的位置
+		tempNum = tempNum.substr(pos1 + 1, pos2 - pos1 - 1);  //截取员工编号
+		if (ModifyNum.compare(tempNum) == 0)
+		{
+			vStaff[i] = ModifyInfo;
+		}
+
+	}
+
+	ofs.open("Boss.txt", ios::out);
+	for (int i = 0; i < vStaff.size(); i++)
+	{
+		ofs << vStaff[i] << endl;  //将数据写回文本
+	}
+	ofs.close();
+}
+
 //按姓名或编号查找员工信息
 void FindStaff()
 {
@@ -319,6 +450,8 @@ void FindStaff()
 	cin >> FindIndex;
 	string buf;
 	ifstream ifs;
+
+	//普通员工文件
 	ifs.open("NormalStaff.txt", ios::in);
 	if (!ifs.is_open())
 	{
@@ -339,6 +472,7 @@ void FindStaff()
 	}
 	ifs.close();
 
+	//经理员工文件
 	ifs.open("ManagerStaff.txt", ios::in);
 	if (!ifs.is_open())
 	{
@@ -359,6 +493,7 @@ void FindStaff()
 	}
 	ifs.close();
 
+	//老板文件
 	ifs.open("Boss.txt", ios::in);
 	if (!ifs.is_open())
 	{
@@ -378,4 +513,245 @@ void FindStaff()
 
 	}
 	ifs.close();
+}
+
+//通过员工编号对员工进行排序
+void SortStaff()
+{
+	vector<string> vStaff;
+	vector<string> vNumber;
+	ifstream ifs;
+	string buf;
+
+	//普通员工文件
+	ifs.open("NormalStaff.txt", ios::in);
+	if (!ifs.is_open())
+	{
+		perror("open file");
+		return;
+	}
+	while (getline(ifs, buf))
+	{
+		vStaff.push_back(buf);
+	}
+	ifs.close();
+
+	vNumber.reserve(vStaff.size());  //为vNumber预留空间
+	for (int i = 0; i < vStaff.size(); i++)
+	{
+		string tempNum = vStaff[i];
+		int pos1 = tempNum.find(' ');  //查找空格第一次出现的位置
+		int pos2 = tempNum.rfind(' ');  //查找空格第二次出现的位置
+		tempNum = tempNum.substr(pos1 + 1, pos2 - pos1 - 1);  //截取员工编号
+		vNumber.push_back(tempNum);  //保存员工编号
+
+	}
+
+	sort(vNumber.begin(),vNumber.end());  //通过算法对编号进行排序
+
+	cout << "普通员工:" << endl;
+	for (int i = 0; i < vNumber.size(); i++)
+	{
+		for (int j = 0; j < vStaff.size(); j++)
+		{
+			string tempNum = vStaff[j];
+			int pos1 = tempNum.find(' ');  //查找空格第一次出现的位置
+			int pos2 = tempNum.rfind(' ');  //查找空格第二次出现的位置
+			tempNum = tempNum.substr(pos1 + 1, pos2 - pos1 - 1);  //截取员工编号
+			if (tempNum.compare(vNumber[i]) == 0)
+			{
+				cout << vStaff[j] << endl;
+			}
+			
+		}
+	}
+
+	//经理员工文件
+
+	vStaff.resize(0);  //清空vStaff
+	vNumber.resize(0);  //清空vNumber
+
+	ifs.open("ManagerStaff.txt", ios::in);
+	if (!ifs.is_open())
+	{
+		perror("open file");
+		return;
+	}
+	while (getline(ifs, buf))
+	{
+		vStaff.push_back(buf);
+	}
+	ifs.close();
+
+	vNumber.reserve(vStaff.size());  //为vNumber预留空间
+	for (int i = 0; i < vStaff.size(); i++)
+	{
+		string tempNum = vStaff[i];
+		int pos1 = tempNum.find(' ');  //查找空格第一次出现的位置
+		int pos2 = tempNum.rfind(' ');  //查找空格第二次出现的位置
+		tempNum = tempNum.substr(pos1 + 1, pos2 - pos1 - 1);  //截取员工编号
+		vNumber.push_back(tempNum);  //保存员工编号
+
+	}
+
+	sort(vNumber.begin(), vNumber.end());  //通过算法对编号进行排序
+
+	cout << "经理员工:" << endl;
+	for (int i = 0; i < vNumber.size(); i++)
+	{
+		for (int j = 0; j < vStaff.size(); j++)
+		{
+			string tempNum = vStaff[j];
+			int pos1 = tempNum.find(' ');  //查找空格第一次出现的位置
+			int pos2 = tempNum.rfind(' ');  //查找空格第二次出现的位置
+			tempNum = tempNum.substr(pos1 + 1, pos2 - pos1 - 1);  //截取员工编号
+			if (tempNum.compare(vNumber[i]) == 0)
+			{
+				cout << vStaff[j] << endl;
+			}
+
+		}
+	}
+
+	//老板文件
+
+	vStaff.resize(0);  //清空vStaff
+	vNumber.resize(0);  //清空vNumber
+
+	ifs.open("Boss.txt", ios::in);
+	if (!ifs.is_open())
+	{
+		perror("open file");
+		return;
+	}
+	while (getline(ifs, buf))
+	{
+		vStaff.push_back(buf);
+	}
+	ifs.close();
+
+	vNumber.reserve(vStaff.size());  //为vNumber预留空间
+	for (int i = 0; i < vStaff.size(); i++)
+	{
+		string tempNum = vStaff[i];
+		int pos1 = tempNum.find(' ');  //查找空格第一次出现的位置
+		int pos2 = tempNum.rfind(' ');  //查找空格第二次出现的位置
+		tempNum = tempNum.substr(pos1 + 1, pos2 - pos1 - 1);  //截取员工编号
+		vNumber.push_back(tempNum);  //保存员工编号
+
+	}
+
+	sort(vNumber.begin(), vNumber.end());  //通过算法对编号进行排序
+
+	cout << "老板:" << endl;
+	for (int i = 0; i < vNumber.size(); i++)
+	{
+		for (int j = 0; j < vStaff.size(); j++)
+		{
+			string tempNum = vStaff[j];
+			int pos1 = tempNum.find(' ');  //查找空格第一次出现的位置
+			int pos2 = tempNum.rfind(' ');  //查找空格第二次出现的位置
+			tempNum = tempNum.substr(pos1 + 1, pos2 - pos1 - 1);  //截取员工编号
+			if (tempNum.compare(vNumber[i]) == 0)
+			{
+				cout << vStaff[j] << endl;
+			}
+
+		}
+	}
+}
+
+//清空文件中的职工信息
+void ClearStaff()
+{
+	vector<string> vStaff;
+	ifstream ifs;
+	string buf;
+	int confirm;
+	
+	cout << "是否确认要执行文件清空操作？确认请按1，返回请按0:" << endl;
+	cin >> confirm;
+	if (confirm == 1)
+	{
+		//普通员工文件
+		ifs.open("NormalStaff.txt", ios::in);
+		if (!ifs.is_open())
+		{
+			perror("open file");
+			return;
+		}
+		while (getline(ifs, buf))
+		{
+			vStaff.push_back(buf);
+		}
+		ifs.close();
+
+		vStaff.resize(0);  //清掉读入容器中的内容
+		vector<string>(vStaff).swap(vStaff);  //创建匿名对象收缩调整后的内存空间
+
+		ofstream ofs;
+		ofs.open("NormalStaff.txt", ios::out);
+		for (int i = 0; i < vStaff.size(); i++)
+		{
+			ofs << vStaff[i] << endl;  //将数据写回文本
+		}
+		ofs.close();
+
+		//经理员工文件
+		ifs.open("ManagerStaff.txt", ios::in);
+		if (!ifs.is_open())
+		{
+			perror("open file");
+			return;
+		}
+		while (getline(ifs, buf))
+		{
+			vStaff.push_back(buf);
+		}
+		ifs.close();
+
+		vStaff.resize(0);  //清掉读入容器中的内容
+		vector<string>(vStaff).swap(vStaff);  //创建匿名对象收缩调整后的内存空间
+
+		ofs.open("ManagerStaff.txt", ios::out);
+		for (int i = 0; i < vStaff.size(); i++)
+		{
+			ofs << vStaff[i] << endl;  //将数据写回文本
+		}
+		ofs.close();
+
+		//老板文件
+		ifs.open("Boss.txt", ios::in);
+		if (!ifs.is_open())
+		{
+			perror("open file");
+			return;
+		}
+		while (getline(ifs, buf))
+		{
+			vStaff.push_back(buf);
+		}
+		ifs.close();
+
+		vStaff.resize(0);  //清空读入容器中的内容
+		vector<string>(vStaff).swap(vStaff);  //收缩调整后的内存空间
+
+		ofs.open("Boss.txt", ios::out);
+		for (int i = 0; i < vStaff.size(); i++)
+		{
+			ofs << vStaff[i] << endl;  //将数据写回文本
+		}
+		ofs.close();
+
+		cout << "文件已清空!!!" << endl;
+	}
+	else if (confirm == 0)
+	{
+		return;
+	}
+	else
+	{
+		cout << "输入错误！！！" << endl;
+		return;
+	}
 }
