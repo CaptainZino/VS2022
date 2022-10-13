@@ -687,7 +687,7 @@ void ClearStaff()
 		ifs.close();
 
 		vStaff.resize(0);  //清掉读入容器中的内容
-		vector<string>(vStaff).swap(vStaff);  //创建匿名对象收缩调整后的内存空间
+		vector<string>(vStaff).swap(vStaff);  //收缩调整后的内存空间
 
 		ofstream ofs;
 		ofs.open("NormalStaff.txt", ios::out);
@@ -711,7 +711,7 @@ void ClearStaff()
 		ifs.close();
 
 		vStaff.resize(0);  //清掉读入容器中的内容
-		vector<string>(vStaff).swap(vStaff);  //创建匿名对象收缩调整后的内存空间
+		vector<string>(vStaff).swap(vStaff);  //收缩调整后的内存空间
 
 		ofs.open("ManagerStaff.txt", ios::out);
 		for (int i = 0; i < vStaff.size(); i++)

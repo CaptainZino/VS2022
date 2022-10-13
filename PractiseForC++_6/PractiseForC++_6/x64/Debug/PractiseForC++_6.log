@@ -29,4 +29,6 @@ D:\Code\VS2022\PractiseForC++_6\PractiseForC++_6\StaffManage.cpp(637,31): warnin
 D:\Code\VS2022\PractiseForC++_6\PractiseForC++_6\StaffManage.cpp(638,32): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
 D:\Code\VS2022\PractiseForC++_6\PractiseForC++_6\StaffManage.cpp(652,32): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
 D:\Code\VS2022\PractiseForC++_6\PractiseForC++_6\StaffManage.cpp(653,33): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  main.cpp
+  正在生成代码...
   PractiseForC++_6.vcxproj -> D:\Code\VS2022\PractiseForC++_6\x64\Debug\PractiseForC++_6.exe
