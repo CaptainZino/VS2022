@@ -956,3 +956,88 @@ using namespace std;
 //	test1();
 //	return 0;
 //}
+
+//stack容器
+//stack是一种先进后出的数据结构，它只有一个出口
+//栈中只有顶端的元素才可以被外界使用，因此栈不允许有遍历行为
+//入栈:push
+//出栈:pop
+//stack常用接口函数原型:
+//stack<T> stack;  //默认构造
+//stack(const stack& stk);  //拷贝构造
+//stack& operator=(const stack& stk);  //赋值
+//push(elem);  //向栈顶添加元素elem
+//pop();  //从栈顶移除一个元素
+//top();  //返回栈顶元素
+//empty();  //判断堆栈容器是否为空
+//size();  //返回栈的大小
+
+//#include <stack>
+//void test1()
+//{
+//	stack<int> stk;
+//	for (int i = 0; i < 10; i++)
+//	{
+//		stk.push(i);
+//	}
+//	cout << "栈的大小:" << stk.size() << endl;
+//	while (!stk.empty())  //栈顶不为空就进行出栈操作
+//	{
+//		cout << stk.top() << " ";
+//		stk.pop();
+//	}
+//	cout << endl;
+//	cout << "栈的大小:" << stk.size() << endl;
+//}
+//int main()
+//{
+//	test1();
+//	return 0;
+//}
+
+//queue容器
+//queue是一种先进先出的数据结构，它有两个出口
+//队列容器允许从一端新增元素，从另一端移除元素
+//队列中只有队头和队尾才可以被外界使用，因此队列不允许有遍历行为
+//队列中进数据-入队-push
+//队列中出数据-出队-pop
+//queue容器常用接口函数原型:
+//queue<T> que;  //默认构造函数
+//queue(const queue& que);  //拷贝构造函数
+//queue& operator=(const queue& que);  //赋值函数
+//push(elem);  //在队尾添加元素elem
+//pop();  //从队头移除第一个元素
+//back();  //返回最后一个元素
+//front();  //返回第一个元素
+//empty();  //判断队列是否为空
+//size();  //返回队列的大小
+
+//#include <queue>
+//
+//void test1()
+//{
+//	queue<int> que;
+//	for (int i = 0; i < 10; i++)
+//	{
+//		que.push(i);
+//	}
+//	cout << que.size() << endl;
+//	while (!que.empty())
+//	{
+//		cout << que.front() << " ";
+//		que.pop();
+//	}
+//	cout << endl;
+//	cout << que.size() << endl;
+//}
+//int main()
+//{
+//	test1();
+//	return 0;
+//}
+
+//list容器
+//list是一种物理存储单元上非连续的存储结构，数据元素的逻辑顺序是通过链表中的指针链接实现的
+//链表是由一些列的结点构成的
+//结点的组成:一个是存储元素的数据域，另一个是存储下一个结点地址的指针域
+//STL中的链表是一个双向循环链表
