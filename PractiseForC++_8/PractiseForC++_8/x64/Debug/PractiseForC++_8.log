@@ -1,5 +1,11 @@
 ﻿  main.cpp
+D:\Code\VS2022\PractiseForC++_8\PractiseForC++_8\main.cpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
 D:\Code\VS2022\PractiseForC++_8\PractiseForC++_8\main.cpp(27,1): warning C4010: 单行注释包含行继续符
 D:\Code\VS2022\PractiseForC++_8\PractiseForC++_8\main.cpp(590,1): warning C4010: 单行注释包含行继续符
 D:\Code\VS2022\PractiseForC++_8\PractiseForC++_8\main.cpp(592,1): warning C4010: 单行注释包含行继续符
+D:\Code\VS2022\PractiseForC++_8\PractiseForC++_8\main.cpp(1044,1): warning C4010: 单行注释包含行继续符
+D:\Code\VS2022\PractiseForC++_8\PractiseForC++_8\main.cpp(1149,1): warning C4010: 单行注释包含行继续符
+D:\Code\VS2022\PractiseForC++_8\PractiseForC++_8\main.cpp(1151,1): warning C4010: 单行注释包含行继续符
+D:\Code\VS2022\PractiseForC++_8\PractiseForC++_8\main.cpp(1205,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\Code\VS2022\PractiseForC++_8\PractiseForC++_8\main.cpp(1575,1): warning C4010: 单行注释包含行继续符
   PractiseForC++_8.vcxproj -> D:\Code\VS2022\PractiseForC++_8\x64\Debug\PractiseForC++_8.exe
