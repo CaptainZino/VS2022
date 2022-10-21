@@ -1,5 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 #include "test.h"
+#include <math.h>
+#include <float.h>
 
 //int main()
 //{
@@ -26,7 +28,8 @@
 //	//show();
 //	//show_test();
 //	int i = 0;
-//	for (i = 0; i < 10; i++) {
+//	for (i = 0; i < 10; i++) 
+// {
 //		print();
 //	}
 //	return 0;
@@ -35,7 +38,8 @@
 //int main()
 //{
 //	int i = 1;
-//	if (1 == i) {
+//	if (1 == i)
+//  {
 //		printf("i = 1\n");
 //		goto error;
 //	}
@@ -71,24 +75,65 @@
 //	return 0;
 //}
 
-int main()
-{
-	//double x = 3.14;
-	//printf("%.50f\n",x);  //精度会发生损失
+//int main()
+//{
+//	//double x = 3.14;
+//	//printf("%.50f\n",x);  //精度会发生损失
+//
+//	double a = 1.0;
+//	double b = 0.1;
+//	printf("%.50f\n",(a-0.9));
+//	printf("%.50f\n", b);
+//
+//	//浮点数不能使用==进行比较
+//	if ((a - 0.9) == b) 
+// {
+//	
+//		printf("1");
+//	}
+//	else 
+// {
+//	
+//		printf("2");
+//	}
+//	return 0;
+//}
 
-	double a = 1.0;
-	double b = 0.1;
-	printf("%.50f\n",(a-0.9));
-	printf("%.50f\n", b);
+//两个浮点数比较
+//int main()
+//{
+//	double x = 1.0;
+//	double y = 0.1;
+//	if (fabs((x - 0.9) - y) < DBL_EPSILON)  //两个浮点数比较
+//	{
+//		printf("x-0.9==x\n");
+//	}
+//	else
+//	{
+//		printf("x-0.9!=x\n");
+//	}
+//}
 
-	//浮点数不能使用==进行比较
-	if ((a - 0.9) == b) {
-	
-		printf("1");
-	}
-	else {
-	
-		printf("2");
-	}
-	return 0;
-}
+//浮点数和0比较
+//int main()
+//{
+//	double x = 0.00000000000000001;
+//	//判断一个浮点数是不是零  //不应取等号，原因见DBL_EPSILON的定义
+//	if (fabs(x) < DBL_EPSILON)  //x == 0.0  // DBL_EPSILON:smallest such that 1.0+DBL_EPSILON != 1.0  //FLT_EPSILON
+//	{
+//		printf("x == 0.0");
+//	}
+//	else
+//	{
+//		printf("x != 0.0");
+//	}
+//}
+
+
+//int main()
+//{
+//	printf("%d\n", 0);
+//	printf("%d\n", '\0');
+//	printf("%d\n", NULL);
+//
+//}

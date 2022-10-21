@@ -1,2 +1,4 @@
 ﻿  main.c
+D:\Code\VS2022\CodeForDan\CodeForDan\main.c(137,9): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“void *”
+D:\Code\VS2022\CodeForDan\CodeForDan\main.c(137,9): warning C4313: "printf": 格式字符串中的 "%d" 与类型为 "void *" 的参数 1 冲突
   CodeForDan.vcxproj -> D:\Code\VS2022\CodeForDan\x64\Debug\CodeForDan.exe
