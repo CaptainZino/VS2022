@@ -158,7 +158,7 @@ void Manage::PrintInfo()
 		switch ((*it)->DepartId)
 		{
 		case 1:
-			(*it)->ShowInfo();
+			(*it)->ShowInfo();  //调用相应子类信息打印函数
 			cout << endl;
 			break;
 		case 2:
