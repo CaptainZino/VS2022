@@ -222,6 +222,7 @@ void Manage::DeleteStaff()
 		
 	}
 
+	//以下注释代码有误，删除容器中的元素会导致部分迭代器失效，如果删除元素后没有及时更新迭代器，可能会导致非法访问
 	/*for (vector<Staff*>::iterator it = vDelete.begin(); it != vDelete.end(); it++)
 	{
 		if (DeleNum == (*it)->PersonalId)
