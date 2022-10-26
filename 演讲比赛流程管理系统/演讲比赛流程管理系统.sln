@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32901.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "演讲比赛流程管理系统", "演讲比赛流程管理系统\演讲比赛流程管理系统.vcxproj", "{00F0551F-5DC7-4178-B2D8-059BB3EBB277}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{00F0551F-5DC7-4178-B2D8-059BB3EBB277}.Debug|x64.ActiveCfg = Debug|x64
+		{00F0551F-5DC7-4178-B2D8-059BB3EBB277}.Debug|x64.Build.0 = Debug|x64
+		{00F0551F-5DC7-4178-B2D8-059BB3EBB277}.Debug|x86.ActiveCfg = Debug|Win32
+		{00F0551F-5DC7-4178-B2D8-059BB3EBB277}.Debug|x86.Build.0 = Debug|Win32
+		{00F0551F-5DC7-4178-B2D8-059BB3EBB277}.Release|x64.ActiveCfg = Release|x64
+		{00F0551F-5DC7-4178-B2D8-059BB3EBB277}.Release|x64.Build.0 = Release|x64
+		{00F0551F-5DC7-4178-B2D8-059BB3EBB277}.Release|x86.ActiveCfg = Release|Win32
+		{00F0551F-5DC7-4178-B2D8-059BB3EBB277}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F9B5E518-5042-418D-B1A0-565D8C8A3D8C}
+	EndGlobalSection
+EndGlobal
